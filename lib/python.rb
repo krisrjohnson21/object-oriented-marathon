@@ -1,3 +1,5 @@
+include Reptile
+
 class Python
   attr_reader :name
   def initialize(name)

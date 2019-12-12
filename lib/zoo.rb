@@ -27,6 +27,25 @@
    end
 
    def add_animal(animal)
-     @cages << animal
+     @cages.each do |cage|
+       if cage.empty?
+         return cage.animal = animal
+       end
+     end
+     return "Your zoo is already at capacity!"
    end
- end
+
+   def visit
+     message = ""
+     @employees.each do |employee|
+       message += employee.greet + "\n"
+     end
+
+     @cages.each do |cage|
+       if !cage.empty?
+         message += cage.animal.speak + "\n"
+       end
+     end
+     return message
+   end
+end
